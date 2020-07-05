@@ -1,17 +1,23 @@
 section .data
-x: dd 0x4FFFFFFF
-y: dd 0x41111111
+x: db 0,0,0,0,0,0
+y: db 0x00,0xb8,0x01,0x40
 
 section .text
-;global _start
-global main
+global _start
+;global main
 ;extern printf
 
-main:
-mov 	ax, [y+2]
-add	[x+2], ax
-mov	ax, [y]
-adc	[x], ax
+_start:
+fld tword [x]
+fld dword [y]
+nop
+nop
+nop
 
-nop
-nop
+;b main
+
+;b _start
+;layout regs
+;set disassembly-flavor intel
+
+;tui regs float
