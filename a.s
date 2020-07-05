@@ -20,4 +20,4 @@ nop
 ;layout regs
 ;set disassembly-flavor intel
 
-;tui regs float
+;tui reg float
